@@ -6,7 +6,6 @@ export default function Blogs({ blogs }) {
     return (
       <div key={`blog-${idx}`}>
         <Link to={`/blogs/${blog._id}`}> {blog.title}</Link>
-        
       </div>
     )
   })

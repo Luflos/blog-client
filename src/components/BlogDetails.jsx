@@ -1,14 +1,12 @@
-
-export default function BlogDetails ({ blog, comments }) {
-
-   const foundComments = comments.map((comment, idx) => {
-      return (
-        <>
-        <h4> {comment.name}</h4>
+export default function BlogDetails({ blog, comments }) {
+  const foundComments = comments.map((comment, idx) => {
+    return (
+      <div key={`comment-${idx}`}>
+        User: <strong>{comment.name}</strong>
         <p>{comment.content}</p>
-        </>
-      )
-    })
+      </div>
+    )
+  })
 
   return (
     <>
@@ -16,8 +14,9 @@ export default function BlogDetails ({ blog, comments }) {
       <h3>By: {blog.name}</h3>
       <p>{blog.content}</p>
       <div>
-      Comments:
-      {foundComments}
+        <br></br>
+        <h3>Comments:</h3>
+        {foundComments}
       </div>
     </>
   )
